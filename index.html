@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 
+<!--設定內容的語系-->
 <html lang="zh-Hant-TW">
+
+
 <!--head 存放網站的基本資訊,ex:title,meta,style-->
 <head>
+
+  <!--網站的標題-->
   <title>POPCAT CLASSIC</title>
+
+  <!-- 添加icon在標題 -->
+  <link rel="icon" type="image/png" href="imgs/cat-head.png">
+
+
+  <!--網站的進一步說明，讓瀏覽者更了解網站的內容摘要，可以增加SEO分數-->
   <meta name="author" content="Joshua O'Sullivan, Freddy Heppell, Edward Hails">
 
 <!--文件編碼是UTF-8-->
   <meta charset="UTF-8">
 
+  <!--SEO 引擎最佳化 用燈塔(lighthouse)去評估-->
   <meta name="msapplication-TileColor" content="#b721ff">
 
+  <!--瀏覽器上看到的網頁主題色-->
   <meta name="theme-color" content="#b721ff">
 
+  <!--Google font 的設定-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Micro+5&family=Noto+Sans+TC:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
@@ -24,7 +38,7 @@
       margin:0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       background-color: #bdaa90;
       user-select: none;
@@ -77,15 +91,22 @@
         -webkit-text-stroke-width: 1.5px;
       }
     }
-    #p { background-image: url("imgs/p.png"); }
+    #p { background-image: url("imgs/p.png"); } <!--"imgs/p.png"-->
     #op { background-image: url("imgs/op.png"); }
   </style>
 </head>
 
+<!--body 放置網頁內文，提供內容給使用者看-->
 <body>
-<img class="title" src="imgs/popcat.svg" alt="POPCAT">
+<img class="title" src="imgs/popcat.svg" alt="POPCAT" width="20",height="200">
 
-<div class="cat-img" id="p"></div>
+<!-- div 作為一個容器 -->
+<div class="cat-img" id="p">123</div>
+
+<video width="100" height="100" preload="auto" loop >
+  <source src="https://youtu.be/aBcjPMhPsyM?feature=shared" type="video/WebM">
+</video>
+
 
 <script>
   /*Preloading alternate cat image*/
@@ -157,5 +178,7 @@
   document.addEventListener("pointerdown", op_func)
   document.addEventListener("keydown", op_func)
 </script>
+
+
 </body>
 </html>
