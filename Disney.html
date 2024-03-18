@@ -1,97 +1,98 @@
-<!DOCTYPE html> <!-- 宣告文件類型為 HTML -->
-<html lang="zh-Hant-TW"> <!-- 設定文件語言為繁體中文 -->
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
 
 <head>
-    <meta charset="UTF-8"> <!-- 設定字符集為 UTF-8 -->
-    <title>Error</title> <!-- 設定網頁標題為 Error -->
-    <link rel="shortcut icon" href="https://static-assets.bamgrid.com/product/disneyplus/favicons/favicon.85e279041d79e51b147c1b6feb4f981e.ico"> <!-- 設定網頁圖示連結 -->
-    <style> <!-- 開始 CSS 樣式區塊 -->
-    body {
-        margin: 0; <!-- 設定邊界外偏移為 0 -->
-        padding: 0; <!-- 設定內容周圍填充為 0 -->
-        position: relative; <!-- 設定相對定位 -->
-        min-height: 100vh; <!-- 設定最小高度為視窗高度 -->
-    }
-
-    .Olaf {
-        position: fixed; <!-- 設定固定定位 -->
-        bottom: 0; <!-- 設定底部距離為 0 -->
-        right: 0; <!-- 設定右側距離為 0 -->
-        animation: playAndStop 5s forwards; <!-- 設定動畫效果 -->
-    }
-
-    .serviceUnavailable {
-        display: none; <!-- 預設隱藏元素 -->
-        position: fixed; <!-- 設定固定定位 -->
-        top: 50%; <!-- 設定頂部距離為視窗一半 -->
-        left: 50%; <!-- 設定左側距離為視窗一半 -->
-        transform: translate(-50%, -50%); <!-- 設定元素居中 -->
-        opacity: 0; <!-- 設定初始透明度為 0 -->
-        transition: opacity 1s ease; <!-- 設定過渡效果 -->
-        text-align: center; <!-- 設定文字居中對齊 -->
-    }
-
-    .serviceUnavailable.show {
-        display: block; <!-- 顯示元素 -->
-        opacity: 1; <!-- 設定不透明度為 1 -->
-    }
-
-    .message {
-        font-size: 30px; <!-- 設定字體大小 -->
-        color: #02137b; <!-- 設定文字顏色 -->
-        margin-top: 10px; <!-- 設定上邊距為 10 像素 -->
-        font-family: "Museo Sans", sans-serif; <!-- 設定字體家族 -->
-    }
-
-    @keyframes playAndStop {
-        0% {
-            opacity: 0; <!-- 設定初始透明度為 0 -->
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="shortcut icon" href="https://static-assets.bamgrid.com/product/disneyplus/favicons/favicon.85e279041d79e51b147c1b6feb4f981e.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
         }
-        50% {
-            opacity: 1; <!-- 設定中間透明度為 1 -->
-        }
-        100% {
-            opacity: 0; <!-- 設定最終透明度為 0 -->
-        }
-    }
 
-    /* 新增的樣式 */
-    .image-container {
-        position: absolute; <!-- 設定絕對定位 -->
-        left: 90px; <!-- 調整元素距離左邊的位置 -->
-        bottom: 20px; <!-- 調整元素距離下方的位置 -->
-    }
-
-    /* 圖片樣式 */
-    .image-container img {
-        width: 150px; <!-- 設定圖片寬度 -->
-        height: auto; <!-- 讓高度按比例縮放 -->
-    }
-
-    /* 螢幕寬度小於850px時隱藏元素 */
-    @media screen and (max-width: 850px) {
-        .image-container {
-            display: none; <!-- 隱藏元素 -->
+        .Olaf {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            animation: playAndStop 5s forwards;
         }
-    }
-    </style> <!-- 結束 CSS 樣式區塊 -->
+
+        .serviceUnavailable {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-align: center;
+        }
+
+        .serviceUnavailable.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .message {
+            font-size: 30px;
+            color: #02137b;
+            margin-top: 10px;
+            font-family: "Museo Sans", sans-serif;
+        }
+
+        @keyframes playAndStop {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* 新增的樣式 */
+        .Felix {
+            position: absolute;
+            left: 90px;
+            bottom: 20px;
+        }
+
+        /* 圖片樣式 */
+        .Felix img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* 螢幕寬度小於850px時隱藏元素 */
+        @media screen and (max-width: 850px) {
+            .Felix {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
-<body> <!-- 開始 body 區塊 -->
-<img class="Olaf" src="img/snow.gif" alt="Olaf bumped into the screen."> <!-- 插入圖片元素 -->
-<div class="serviceUnavailable show"> <!-- 建立顯示不可用服務的區塊 -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="等一下喔" width="416.4" height="226"> <!-- 插入圖片元素 -->
-    <div class="message" id="refreshMessage"> <!-- 建立訊息區塊 -->
-        The webpage is overloaded.<br> <!-- 顯示網頁超載訊息 -->
-        Please refresh the page after 3 minutes. <!-- 提示在 3 分鐘後刷新網頁 -->
-    </div> <!-- 結束訊息區塊 -->
-</div> <!-- 結束顯示不可用服務的區塊 -->
+<body>
+<img class="Olaf" src="img/snow.gif" alt="Olaf bumped into the screen.">
+<div class="serviceUnavailable show">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="等一下喔" width="416.4" height="226">
+    <div class="message" id="refreshMessage">
+        The webpage is overloaded.<br>
+        Please refresh the page after 3 minutes.
+    </div>
+</div>
 
 <!-- 使用容器包裹圖片，並對齊到左下角 -->
-<div class="image-container"> <!-- 建立圖片容器 -->
-    <img src="img/Felix.webp" alt="Felix的圖片"> <!-- 插入圖片元素 -->
-</div> <!-- 結束圖片容器 -->
+<div class="Felix">
+    <img src="img/Felix.webp" alt="Felix的圖片">
+</div>
 
-</body> <!-- 結束 body 區塊 -->
+</body>
 
-</html> <!-- 結束 HTML 文件 -->
+</html>
+
