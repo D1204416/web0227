@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="shortcut icon" href="https://static-assets.bamgrid.com/product/disneyplus/favicons/favicon.85e279041d79e51b147c1b6feb4f981e.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative; /* 先設定相對位置 */
+            min-height: 100vh; /* 最小高度填滿整個視窗 */
+        }
+
+        .Olaf {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            animation: playAndStop 5s forwards;
+        }
+
+        .serviceUnavailable {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-align: center;
+        }
+
+        .serviceUnavailable.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .message {
+            font-size: 30px;
+            color: #02137b;
+            margin-top: 10px;
+            font-family: "Museo Sans", sans-serif;
+        }
+
+        @keyframes playAndStop {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* 新增的樣式 */
+        .image-container {
+            position: absolute;
+            left: 90px; /* 調整圖片距離左邊的位置 */
+            bottom: 20px; /* 調整圖片距離下方的位置 */
+        }
+
+        /* 圖片樣式 */
+        .image-container img {
+            width: 150px; /* 設定圖片寬度 */
+            height: auto; /* 讓高度按比例縮放 */
+        }
+
+        /* 螢幕寬度小於850px時隱藏圖片 */
+        @media screen and (max-width: 850px) {
+            .image-container {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<img class="Olaf" src="imgs/snow.gif" alt="Olaf bumped into the screen.">
+<div class="serviceUnavailable show">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="等一下喔" width="416.4" height="226">
+    <div class="message" id="refreshMessage">
+        The webpage is overloaded.<br>
+        Please refresh the page after 3 minutes.
+    </div>
+</div>
+
+<!-- 使用容器包裹圖片，並對齊到左下角 -->
+<div class="image-container">
+    <img src="imgs/Felix.webp" alt="Felix的圖片">
+</div>
+
+</body>
+
+</html>
