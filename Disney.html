@@ -20,29 +20,6 @@
             animation: playAndStop 5s forwards;
         }
 
-        .serviceUnavailable {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 1s ease;
-            text-align: center;
-        }
-
-        .serviceUnavailable.show {
-            display: block;
-            opacity: 1;
-        }
-
-        .message {
-            font-size: 30px;
-            color: #02137b;
-            margin-top: 10px;
-            font-family: "Museo Sans", sans-serif;
-        }
-
         @keyframes playAndStop {
             0% {
                 opacity: 0;
@@ -55,7 +32,26 @@
             }
         }
 
-        /* 新增的樣式 */
+
+        .serviceUnavailable {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+
+        .message {
+            font-size: 30px;
+            color: #02137b;
+            margin-top: 10px;
+            font-family: "Museo Sans", sans-serif;
+        }
+
+
+
+        /* 阿修 */
         .Felix {
             position: absolute;
             left: 90px;
@@ -79,7 +75,7 @@
 
 <body>
 <img class="Olaf" src="imgs/snow.gif" alt="Olaf bumped into the screen.">
-<div class="serviceUnavailable show">
+<div class="serviceUnavailable">
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="等一下喔" width="416.4" height="226">
     <div class="message" id="refreshMessage">
         The webpage is overloaded.<br>
@@ -95,3 +91,4 @@
 </body>
 
 </html>
+
