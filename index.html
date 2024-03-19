@@ -91,7 +91,7 @@
         -webkit-text-stroke-width: 1.5px;
       }
     }
-    #p { background-image: url("imgs/p.png"); } <!--"imgs/p.png"-->
+    #p { background-image: url("imgs/p.png"); }
     #op { background-image: url("imgs/op.png"); }
   </style>
 </head>
@@ -107,7 +107,7 @@
   <source src="https://youtu.be/aBcjPMhPsyM?feature=shared" type="video/WebM">
 </video>
 
-
+<!--
 <script>
   /*Preloading alternate cat image*/
   preload = new Image();
@@ -177,6 +177,77 @@
   document.addEventListener("keyup", p_func)
   document.addEventListener("pointerdown", op_func)
   document.addEventListener("keydown", op_func)
+</script>-->
+
+<!--
+<script>
+
+  let pop_count = 0;
+
+  //用++簡化程式碼如下
+  // pop_count = pop_count+1;
+  // pop_count++;
+
+  //函式
+  //function open_popcat() {
+  //pop_count++;}
+  // open_popcat();
+
+  //let op = function open_popcat(){
+  //  pop_count++;
+  //}
+
+  //console.log(op);
+
+  //console.log(pop_count);
+
+
+  let cat = document.getElementById("p");
+ // cat.innerHTML=pop_count;
+  cat.style.backgroundImage = "imgs/op.png";
+
+  let open_popcat = function (){
+    pop_count++;
+
+  }
+
+  let open_popcat = function (){
+    pop_count++;
+    cat.innerHTML = pop_count;
+    cat.id = "op";
+  }
+
+  let close_popcat = function () {
+    cat.id = "p"
+  }
+
+  document.addEventListener("Keydown",open_popcat);
+  document.addEventListener("pointerdown",open_popcat);
+  document.getElementById("keyup",);
+
+
+
+
+</script> -->
+
+<script>
+  let clickCount=0;
+  const cat=document.getElementById("p");
+  let popAudio=new Audio("pops/pop1.mp3");
+  function popclick(){
+    clickCount++;
+    cat.innerHTML=clickCount;
+    cat.id="op";
+    popAudio.load();
+    popAudio.play();
+  }
+  function popcl(){
+    cat.id="p";
+  }
+  document.addEventListener("keydown",popclick);
+  document.addEventListener("pointerdown",popclick);
+  document.addEventListener("keyup",popcl);
+  document.addEventListener("pointerup",popcl);
 </script>
 
 
